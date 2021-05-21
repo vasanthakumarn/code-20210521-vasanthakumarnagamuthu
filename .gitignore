@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+/.idea/code-20210521-vasanthakumarnagamuthu.iml
+/.idea/.gitignore
+/.idea/modules.xml
+/.idea/vcs.xml

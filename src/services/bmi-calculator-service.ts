@@ -4,22 +4,22 @@ import {bmiCatetory} from "../data/bmi-category";
 export class BmiCalculatorService {
 
     calculatBMIAndCategoryAndHealthRish(personBMIData: IPersonBMIData[]): IPersonBMIData[] {
-        console.log(personBMIData.length+'<<>>'+new Date());
+        console.log('Total BMI Data Count ', personBMIData.length, '- BMI Processing Started @ >>'+new Date());
         personBMIData.map((data: IPersonBMIData) => {
             data.BMI = this.findBMI(data);
              let categoryBucket = this.findBMICategoryBucket(data.BMI);
              data.BMICategory = bmiCatetory[categoryBucket].name;
              data.HealthRisk = bmiCatetory[categoryBucket].healthRisk;
         });
-        console.log(personBMIData.length+'<<Completed>>'+new Date());
+        console.log('Total BMI Data Count ', personBMIData.length, '- BMI Processing Completed @ >>'+new Date());
         return personBMIData;
     }
 
-    findBMI(data: IPersonBMIData): number {
+    private findBMI(data: IPersonBMIData): number {
         return Math.round(data.WeightKg / Math.pow(data.HeightCm / 100, 2));
     }
 
-    findBMICategoryBucket(bmi: number): number {
+    private findBMICategoryBucket(bmi: number): number {
         let count = 0;
         let bucket = -1;
         while (count < bmiCatetory.length-1) {

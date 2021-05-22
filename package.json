@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "code-20210521-vasanthakumarnagamuthu",
   "scripts": {
+    "start": "npm run serve",
+    "serve": "node dist/server.js",
     "build": "npm run build-ts",
     "build-ts": "tsc",
     "watch-ts": "tsc -w",

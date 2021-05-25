@@ -11,6 +11,7 @@ let processedBMIData: IPersonBMIData[];
 server.get('/', (req, res) => {
     bmiCalculator = new BmiCalculator(new BmiCalculatorService());
     processedBMIData = bmiCalculator.startProcessingData(personBMIData);
+    console.log(processedBMIData);
     res.send({statusCode: 200, bmiData: processedBMIData});
 });
 

@@ -16,4 +16,5 @@ server.get('/', (req, res) => {
 });
 
 module.exports = server.listen(process.env.PORT || 3000, () => {
+    console.log('Server started running in ');
 });
